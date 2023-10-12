@@ -116,8 +116,7 @@ func main() {
 		}
 	}
 
-	for true {
-		scanner.Scan()
+	for scanner.Scan() {
 		manatee, err := strconv.Atoi(scanner.Text())
 
 		if err == nil {
