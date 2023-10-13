@@ -20,7 +20,7 @@ import (
 generates every possible combination of manatees being held in the tubs by use of a binary number with range of 0 to 2^n (n == number of manatees total).
 a seprate function uses the number as a set of instructions. In the binary number,
 0 represents a manatee sent into the left tub, and 1 repesents a manatee sent into the right tub.
-it then compares each of the maximums from all of the given binary combinations and returns the highest maximum
+it then compares each of the maximums from all of the given binary combinations and returns the highest maximum and maximum list
 */
 func getMaxManatees(manateeList *list.List, tubLength int) list.List {
 	len := manateeList.Len()                    // amount of manatees stored in list
@@ -51,7 +51,7 @@ func PadLeft(binaryStr string, length int) string {
 
 /*
 getLocalMaxManatees calculates the amount of manatees that can fit based of a binary number that getMaxManatees supplies it with
-it then returns the maximum amount of manatees it can fit into the tube based on the provided instructions
+it then returns the longest generated list of port and starboard which is the solution
 */
 func getLocalMaxManatees(manateeQueue *list.List, tublength int, strInstructions string, outputTub list.List) list.List {
 	var localMax, leftTub, rightTub int
@@ -101,11 +101,9 @@ func getLocalMaxManatees(manateeQueue *list.List, tublength int, strInstructions
 			return *tempTub
 		}
 
-		// if instruction = 0 and the if statement for appending port was not executed,
-
 	}
 
-	// returns error if the base cases do not return
+	// returns empty list if the base cases do not return
 	return *list.New().Init()
 }
 
