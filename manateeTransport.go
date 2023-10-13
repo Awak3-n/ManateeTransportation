@@ -1,3 +1,9 @@
+/*
+ * Author: Michael Komar, mkomar2021@my.fit.edu
+ * Author: Michael Richards, mrichards2021@my.fit.edu
+ * Course: CSE 4250, Fall 2023
+ * Project: proj2, tub
+ */
 package main
 
 import (
@@ -103,14 +109,6 @@ func getLocalMaxManatees(manateeQueue *list.List, tublength int, strInstructions
 	return *list.New().Init()
 }
 
-//func addPort() {
-
-//}
-
-//func addStarboard {
-
-//}
-
 func main() {
 	var tubLength int          // how big both of the tubs are
 	manateeQueue := list.New() // list that holds all of the given manatees lengths
@@ -122,7 +120,6 @@ func main() {
 	if err == nil {
 		if tubLength >= 1 && tubLength <= 100 {
 			tubLength *= 100
-			//fmt.Printf("tublength: %d\n", tubLength)
 		}
 	}
 
@@ -133,7 +130,6 @@ func main() {
 			if manatee != 0 {
 				if manatee >= 100 && manatee <= 3000 {
 					manateeQueue.PushBack(manatee)
-					//fmt.Printf("pushing manatee: %d\n", manatee)
 				}
 			} else {
 				break
@@ -143,7 +139,6 @@ func main() {
 	output := getMaxManatees(manateeQueue, tubLength) // maximum amount of possible combinations of manatees
 	max := output.Len()
 	fmt.Printf("%d\n", max)
-	//fmt.Printf("tublength: %d\n", tubLength)
 
 	for i := output.Front(); i != nil; i = i.Next() {
 		fmt.Println(i.Value)
